@@ -7770,7 +7770,8 @@ function count() {
 
   var _loop = function _loop(index) {
     upvote[index].addEventListener('click', function (event) {
-      document.getElementById("description" + index).textContent = vote[index]++;
+      vote[index]++;
+      document.getElementById("description" + index).textContent = vote[index];
       loadDB();
     });
   };
@@ -7783,7 +7784,8 @@ function count() {
 
   var _loop2 = function _loop2(index) {
     downvote[index].addEventListener('click', function (event) {
-      document.getElementById("description" + index).textContent = vote[index]--;
+      vote[index]--;
+      document.getElementById("description" + index).textContent = vote[index];
       loadDB();
     });
   };
@@ -7819,7 +7821,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65310" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54899" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

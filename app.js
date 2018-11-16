@@ -28,7 +28,7 @@ async function getNews(query) {
     }
 
   }
-  vote = JSON.parse(localStorage.getItem('voteed'));
+vote = JSON.parse(localStorage.getItem('voteed'));
   loadDB()
 
   updateUI(content.articles.map(createArticle).join('\n'))
@@ -68,7 +68,8 @@ function count() {
 
   for (let index = 0; index < upvote.length; index++) {
     upvote[index].addEventListener('click', (event) => {
-      document.getElementById("description" + index).textContent = vote[index]++;
+      vote[index]++
+      document.getElementById("description" + index).textContent = vote[index];
       loadDB()
     })
 
@@ -77,7 +78,8 @@ function count() {
 
   for (let index = 0; index < downvote.length; index++) {
     downvote[index].addEventListener('click', (event) => {
-      document.getElementById("description" + index).textContent = vote[index]--;
+      vote[index]--
+      document.getElementById("description" + index).textContent = vote[index];
       loadDB()
 
     })

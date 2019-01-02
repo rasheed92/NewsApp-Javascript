@@ -1,1 +1,3 @@
-# Week 2 Task 2 Extended
+# Week 2 Task 2 
+
+NewsApp-Javascript
